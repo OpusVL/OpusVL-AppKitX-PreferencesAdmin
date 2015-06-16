@@ -5,6 +5,11 @@ use Moose;
 extends 'HTML::FormFu::Validator';
 with 'OpusVL::AppKitX::PreferencesAdmin::Validator::UniquePreference';
 
+has prf_model => (
+    is => 'ro',
+    isa => 'Str',
+);
+
 sub validate_value 
 {
     my ($self, $value, $params) = @_;
@@ -24,10 +29,8 @@ sub resultset
     my $self = shift;
     my $name = shift;
 
-    # XXX We can't reuse this code until we've got a way of parameterising this
-    # Or until we move away from FormFu, which might avoid the requirement.
     my $c = $self->form->stash->{context};
-    return $c->model('Users')->resultset($name);
+    return $c->model($self->prf_model)->resultset($name);
 }
 
 1;

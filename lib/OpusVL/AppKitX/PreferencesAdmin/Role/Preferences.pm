@@ -1,4 +1,4 @@
-package OpusVL::AppKitX::PreferencesAdmin::Role::Controller;
+package OpusVL::AppKitX::PreferencesAdmin::Role::Preferences;
 
 use Moose::Role;
 
@@ -250,9 +250,11 @@ sub preference_values
 
 =head1 NAME
 
-OpusVL::AppKitX::TokenProcessor::Admin::Role::PreferencesController
+OpusVL::AppKitX::PreferencesAdmin::Role::Preferences
 
 =head1 DESCRIPTION
+
+Role for controllers that will be setting up the preferences for a PrfOwner class
 
 =head1 METHODS
 

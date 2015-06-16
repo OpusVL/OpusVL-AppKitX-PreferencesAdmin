@@ -1,7 +1,9 @@
-package OpusVL::AppKitX::PreferencesAdmin::Role::ParameterValueEditing;
+package OpusVL::AppKitX::PreferencesAdmin::Role::ObjectPreferences;
 
 use 5.010;
 use Moose::Role;
+
+requires 'prf_model';
 
 sub add_prefs_defaults
 {
@@ -306,6 +308,7 @@ sub construct_form_fields_ex
                     $details->{validator} = [] unless(exists $details->{validator});
                     push @{$details->{validator}}, { 
                         type => '+OpusVL::AppKitX::PreferencesAdmin::FormFu::Validator::UniquePreference',
+                        prf_model => $self->prf_model,
                     };
                 }
                 if($field->can('ajax_validate') && $field->ajax_validate)
@@ -370,11 +373,16 @@ OpusVL::AppKitX::PreferencesAdmin::Role::ParameterValueEditing
 
 =head1 DESCRIPTION
 
-Controller role that provides standard behaviour for dealing with PrfOwner result classes
+Role for Controllers that will be providing values for preferences on a PrfOwner
+object (i.e. a row object).
 
 =head1 METHODS
 
-=head2 add_prefs_defaults
+=head2 add_prefs_defaults($c, %args)
+
+Returns a hashref of default form values from a given C<object> or C<resultset>.
+
+Provide a C<defaults> hashref in C<%args> to merge in default defaults.
 
 =head2 update_prefs_values
 
