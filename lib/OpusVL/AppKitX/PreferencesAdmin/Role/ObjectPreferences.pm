@@ -40,7 +40,6 @@ sub update_prefs_values
     # FIXME: to use two methods below instead.
     my $form = $c->stash->{form};
     my @fields = $object->prf_defaults->active->all;
-    my $params = $c->model($self->model)->schema->sys_params;
     for my $field (@fields)
     {
         my $name = $field->name;
@@ -61,6 +60,7 @@ sub update_prefs_values
 
 =for comment This should probably be a trigger on the model, because we can't use the controller by name
 
+            my $params = $c->model($self->prf_model)->schema->sys_params;
             if ($params->get('audit.email.alerts') =~ /yes/i) {
                 my $phone_field = $params->get('audit.phone.field');
                 if ($field->name eq 'email' or $field->name eq $phone_field) {
