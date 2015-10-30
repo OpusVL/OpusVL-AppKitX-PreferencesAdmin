@@ -11,6 +11,8 @@ requires 'Moose';
 requires 'namespace::autoclean';
 requires 'CatalystX::InjectComponent';
 
+requires 'OpusVL::AppKit';
+
 build_requires 'Catalyst::Runtime' => '5.80015';
 build_requires 'Test::WWW::Mechanize::Catalyst';
 build_requires 'Test::More' => '0.88';
