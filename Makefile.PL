@@ -6,6 +6,7 @@ use Module::Install::AuthorTests;
 
 name 'OpusVL-AppKitX-PreferencesAdmin';
 all_from 'lib/OpusVL/AppKitX/PreferencesAdmin.pm';
+license  'perl';
 
 requires 'Moose';
 requires 'namespace::autoclean';
