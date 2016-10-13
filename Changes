@@ -1,0 +1,7 @@
+Changes for OpusVL::AppKitX::PreferencesAdmin
+
+{{ $NEXT }}
+
+0.05      2016-10-13 12:40:28+01:00 Europe/London
+
+    - Converted to dzil
