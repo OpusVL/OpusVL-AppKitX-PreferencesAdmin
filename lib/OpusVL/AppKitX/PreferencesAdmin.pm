@@ -25,7 +25,7 @@ after 'setup_components' => sub {
 
 =head1 NAME
 
-OpusVL::AppKitX::PreferencesAdmin - 
+OpusVL::AppKitX::PreferencesAdmin - Administration controllers for L<OpusVL::Preferences>
 
 =head1 DESCRIPTION
 
