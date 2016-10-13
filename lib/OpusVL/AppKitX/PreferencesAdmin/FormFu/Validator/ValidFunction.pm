@@ -40,5 +40,18 @@ sub validate_value
     return 1;
 }
 
-
 1;
+
+=head1 NAME
+
+OpusVL::AppKitX::PreferencesAdmin::FormFu::Validator::ValidFunction - Validates that a Token can perform the given function.
+
+=head1 DESCRIPTION
+
+I don't know what this does besides what the abstract says
+
+=head1 METHODS
+
+=head2 validate_value
+
+Please document.

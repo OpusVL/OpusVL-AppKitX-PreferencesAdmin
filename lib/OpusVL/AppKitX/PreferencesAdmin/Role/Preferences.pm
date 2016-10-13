@@ -260,13 +260,13 @@ Role for controllers that will be setting up the preferences for a PrfOwner clas
 
 =head2 index_preferences
 
-=head2 add_prefences
+=head2 add_preferences
 
 =head2 do_preference_chain
 
-=head2 edit_prefences
+=head2 edit_preferences
 
-=head2 prefence_values
+=head2 preference_values
 
 =head2 do_form_setup
 

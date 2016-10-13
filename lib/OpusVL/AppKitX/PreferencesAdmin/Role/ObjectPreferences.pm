@@ -2,6 +2,7 @@ package OpusVL::AppKitX::PreferencesAdmin::Role::ObjectPreferences;
 
 use 5.010;
 use Moose::Role;
+use Switch::Plain;
 
 requires 'prf_model';
 
@@ -232,28 +233,28 @@ sub construct_form_fields_ex
                 label => $field->comment,
                 name => $name,
             };
-            given($field->data_type)
+            sswitch($field->data_type)
             {
-                when(/email/) {
+                case 'email': {
                     $details->{constraints} = [ { type => 'Email' } ];
                     $details->{filters} = [ { type => 'TrimEdges' } ];
                 }
-                when(/textarea/) {
+                case 'textarea': {
                     $details->{type} = 'Textarea';
                     $details->{filters} = [ { type => 'TrimEdges' } ];
                 }
-                when(/text/) {
+                case 'text': {
                 }
-                when(/number/) {
+                case 'number': {
                     $details->{constraints} = [ { type => 'Number' } ];
                     $details->{filters} = [ { type => 'TrimEdges' } ];
                     $extra = '';
                 }
-                when(/boolean/) {
+                case 'boolean': {
                     $details->{type} = 'Checkbox';
                     $extra = '';
                 }
-                when(/date/) {
+                case 'date': {
                     $details->{attributes} = {
                         autocomplete => 'off',
                         class => 'date_picker',
@@ -272,12 +273,12 @@ sub construct_form_fields_ex
                     };
                     $extra = '';
                 }
-                when(/integer/) {
+                case 'integer': {
                     $details->{constraints} = [ { type => 'Integer' } ];
                     $details->{filters} = [ { type => 'TrimEdges' } ];
                     $extra = '';
                 }
-                when(/select/) {
+                case 'select': {
                     $details->{type} = 'Select';
                     $details->{empty_first} = 1;
                     $details->{options} = $field->form_options;
@@ -390,6 +391,8 @@ Provide a C<defaults> hashref in C<%args> to merge in default defaults.
 
 =head2 collect_values_from_form
 
+=head2 collect_values_from_form_ex
+
 =head2 prefs_hash_to_array
 
 =head2 update_prefs_from_hash
@@ -399,6 +402,8 @@ Provide a C<defaults> hashref in C<%args> to merge in default defaults.
 =head2 construct_global_data_search_form
 
 =head2 construct_form_fields
+
+=head2 construct_form_fields_ex
 
 =head2 field_type_info
 

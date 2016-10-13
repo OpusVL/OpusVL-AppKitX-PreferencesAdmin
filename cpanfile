@@ -1,6 +1,7 @@
 requires 'Moose';
 requires 'namespace::autoclean';
 requires 'CatalystX::InjectComponent';
+requires 'Switch::Plain';
 
 requires 'OpusVL::AppKit';
 

@@ -50,3 +50,18 @@ sub validate
 }
 
 1;
+
+=head1 NAME
+
+OpusVL::AppKitX::PreferencesAdmin::Validator::UniquePreference - Validate that a preference is unique on a model
+
+=head1 DESCRIPTION
+
+I think this is a Validator for FormFu that checks a preference doesn't already
+exist on a model before creating it.
+
+=head1 METHODS
+
+=head2 validate
+
+Performs validation. Please document.

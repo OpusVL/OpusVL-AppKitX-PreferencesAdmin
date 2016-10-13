@@ -34,3 +34,22 @@ sub resultset
 }
 
 1;
+
+=head1 NAME 
+
+OpusVL::AppKitX::PreferencesAdmin::Validator::UniquePreference - FormFu validator for uniqueness of preference
+
+=head1 DESCRIPTION
+
+Validates that a preference is not already set up on a model
+
+=head1 METHODS
+
+=head2 validate_value
+
+Validates that the provided preference name does not already exist on the provided model.
+
+=head2 resultset
+
+Fetches the named resultset from this validator's model. This assumes the model
+is DBIC. I don't know why this is here.
